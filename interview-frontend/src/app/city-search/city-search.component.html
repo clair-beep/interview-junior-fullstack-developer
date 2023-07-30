@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()">
+    <label for="searchTerm">City Search:</label>
+    <input type="text" id="searchTerm" [(ngModel)]="searchTerm" name="searchTerm" required>
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    <li *ngFor="let city of cities">{{ city.cityName }}</li>
+</ul>
