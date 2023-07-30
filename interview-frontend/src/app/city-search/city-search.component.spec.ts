@@ -1,16 +1,14 @@
 import { CitySearchComponent } from './city-search.component';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs'; // Import 'of' operator to create an observable with test data
+import { of } from 'rxjs';
 
 describe('CitySearchComponent', () => {
   let component: CitySearchComponent;
-  let httpClientMock: jasmine.SpyObj<HttpClient>; // Create a mock of HttpClient
+  let httpClientMock: jasmine.SpyObj<HttpClient>;
 
   beforeEach(() => {
-    // Create a mock of HttpClient
+    // Create a mock of HTTP module
     httpClientMock = jasmine.createSpyObj('HttpClient', ['get']);
-
-    // Create an instance of the component and inject the mock HttpClient
     component = new CitySearchComponent(httpClientMock);
   });
 
@@ -22,10 +20,9 @@ describe('CitySearchComponent', () => {
     component.searchTerm = searchTerm;
 
     // Mock the HTTP get request with an observable that returns test data
-    const testData = [{ name: 'City 1' }, { name: 'City 2' }];
+    const testData = [{ name: 'Berlin' }, { name: 'Munich' }];
     httpClientMock.get.and.returnValue(of(testData));
 
-    // Call the onSubmit() method
     component.onSubmit();
 
     // Assert that the get method of HttpClient was called with the correct URL

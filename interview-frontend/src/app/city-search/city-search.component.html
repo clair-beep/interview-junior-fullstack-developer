@@ -1,8 +1,20 @@
 <form (ngSubmit)="onSubmit()">
-    <input type="text" [(ngModel)]="searchTerm" name="searchTerm" required>
-    <button type="submit">Search</button>
+    <input type="text" [(ngModel)]="searchTerm" name="searchTerm" required placeholder="Enter search term"
+        (focus)="onInputFocus()" (blur)="onInputBlur()" [ngClass]="{ 'red-input': isInputFocused }"> <button
+        type="submit">Search</button>
 </form>
 
 <ul>
-    <li *ngFor="let city of cities">{{ city.cityName }}</li>
+    <li *ngFor="let city of cities" (click)="onCitySelect(city)" [ngClass]="{ 'selected-city': selectedCity === city }">
+        {{ city.cityName }}
+    </li>
 </ul>
+
+<div *ngIf="selectedCity">
+    <h2>{{ selectedCity.cityName }}</h2>
+    <p>Count: {{ selectedCity.count }}</p>
+</div>
+
+<button (click)="onBackPage()" *ngIf="page > 1">Back</button>
+
+<button (click)="onNextPage()" *ngIf="cities.length > 0">Next</button>

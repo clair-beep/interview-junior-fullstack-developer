@@ -13,6 +13,9 @@ input {
   border: 1px solid #ccc;
   border-radius: 5px 0 0 5px;
 }
+.red-input {
+  background-color: rgb(255, 187, 187);
+}
 
 button {
   padding: 5px 10px;
@@ -30,4 +33,10 @@ ul {
 
 li {
   margin: 5px 0;
+}
+
+.selected-city {
+  background-color: lightblue;
+  font-weight: bold;
+  cursor: pointer;
 }
