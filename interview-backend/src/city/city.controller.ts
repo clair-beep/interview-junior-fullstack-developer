@@ -23,7 +23,7 @@ export class CityController {
             page,
             pageSize,
         );
-
+        console.log(matchingCities)
         return matchingCities;
     }
 }

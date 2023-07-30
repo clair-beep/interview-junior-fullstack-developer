@@ -58,6 +58,19 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## API Endpoints
+
+List of API endpoints exposed by the CityController module. Include details about each endpoint, request parameters, response format, and any additional information.
+
+```bash
+    GET /cities/search
+        Description: Search for cities based on a search term.
+        Query Parameters:
+            searchTerm (string, required): The search term to find matching cities.
+            page (number, optional, default: 1): The page number for pagination.
+        Response: An array of cities matching the search term.
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
@@ -65,6 +78,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## Stay in touch
 
 - Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Contributor - [Claire Mateus] (https://github.com/clair-beep)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
