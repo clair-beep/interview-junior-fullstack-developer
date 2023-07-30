@@ -14,7 +14,7 @@ describe('CitySearchComponent', () => {
 
   it('should call the backend endpoint with the correct search term when onSubmit() is called', () => {
     const searchTerm = 'test';
-    const expectedUrl = `http://localhost:3001/cities/search?searchTerm=${searchTerm}`;
+    const expectedUrl = `http://localhost:3001/cities/search?searchTerm=${searchTerm}&page=1`;
 
     // Set the searchTerm to the desired value
     component.searchTerm = searchTerm;
