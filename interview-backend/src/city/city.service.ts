@@ -14,11 +14,11 @@ export class CityService {
 
     searchCities(searchTerm: string, page: number, pageSize: number): City[] {
         // Convert the search term to lowercase for case-insensitive search
-        const searchQuery = searchTerm.toLowerCase().trim();
+        const normalizedSearchTerm = searchTerm.toLocaleLowerCase('de-DE').trim();
 
         // Perform the city search based on the cityName property
         const matchingCities = this.cities.filter((city) =>
-            city.cityName.toLowerCase().includes(searchQuery)
+            city.cityName.toLocaleLowerCase('de-DE').includes(normalizedSearchTerm)
         );
 
         // Calculate the start index and end index for pagination
